@@ -1,26 +1,31 @@
 import './App.css'
-import Hw2MaxMin from './Hw2MaxMin'
 import Hw3Book from './Hw3Book'
-import Hw3App from './Hw3App'
 
-
-const minCount = 1
-const maxCount = 5
-const name = 'JS for beginners'
-const year = 2018
-const price = 1000
-const props = {}
-
-function App() {
+const App = () => {
   return (
-    <div className="App" id='hello'>           
-      <Hw2MaxMin minNumber={minCount} maxNumber={maxCount}/>         
-      <Hw3Book name={name} year={year} price={price} /> 
-      <Hw3Book name="React for beginners" year="2019" price="1200" />
-      <Hw3Book name="Vue for beginners" year="2021" price="1500" /> 
-      <Hw3App />   
-    </div>    
+    <div>
+      <h1 id="hello" className="class1">Hello from React</h1>
+      < Hw3Book
+        name="JS for beginners"
+        year={2018}
+        price={1000}
+      />
+      < Hw3Book
+        name="React"
+        year={2020}
+        price={1200}
+      />
+      < Hw3Book
+        name="Vue JS"
+        year={2019}
+        price={1100}
+      />
+    </div>
   )
 }
 
 export default App
+
+//import Hw2MaxMin from './Hw2MaxMin'
+//const minCount = 1
+//const maxCount = 5
