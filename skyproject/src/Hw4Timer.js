@@ -15,33 +15,30 @@ export default class ReacTimer extends React.Component {
     }
 
     handleStart(){
-        this.setState({isCounting: true})
-        this.timer = setInterval(this.start, 1000)
+        this.setState(state: {isCounting: true})
+        this.setState(state: {timer: setInterval(this.start, ms: 1000)})
+        
     }
 
     handleStop(){
-        this.setState({isCounting: false})
-        clearInterval(this.timer);
+        this.setState(state: {isCounting: false})
+        clearInterval(this.state.timer);
     }
 
-    handleReset(){
-        this.setState({isCounting: true})
-        clearInterval(this.timer);
-        this.setState({timer: 0 })
+    handleReset(){       
+        this.setState(state: {count: 0 })
     }
 
     start = () => {
-        this.setState((prevState) => {
+        this.setState(state:(prevState) => {
             return {count: Number(prevState.count) + 1}
         })
     }
 
-    componentDidMount() {
-        this.timer = setInterval(this.start, 1000)
-      }
+    //componentDidMount() {this.timer = setInterval(this.start, 1000) }
 
     componentWillUnmount() {
-       clearInterval(this.timer)
+       clearInterval(this.state.timer)
     }
 
     //componentDidUpdate() {} не понимаю какое здесь условие писать
